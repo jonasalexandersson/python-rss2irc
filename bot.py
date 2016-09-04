@@ -52,7 +52,7 @@ class IRCBot(irc.client.SimpleIRCClient):
                 news_count = self.__db.get_news_count()
                 answer = "Feeds: " + Colours(self.num_col,str(feeds_count)).get() + ", News: " + Colours(self.num_col,str(news_count)).get()
 
-            # Print last 25 news. 
+            # Print last 10 news. 
             elif msg == "!last":
                 answer = ""
                 for entry in self.__db.get_latest_news()[::-1]:
